@@ -66,11 +66,7 @@ namespace PolyclinicrRegistry
             dataGridView.AllowUserToDeleteRows = false;
 
             dataGridView.Columns.Remove("Fio");
-            
-
-
-            //dataGridView.Rows[0].Cells[0].ReadOnly = true;
-
+        
             DataGridViewCellStyle st = new DataGridViewCellStyle();
             st.SelectionBackColor = Color.Blue;
 
@@ -121,17 +117,7 @@ namespace PolyclinicrRegistry
             txtNam.Text = r.Cells[2].Value.ToString();
             txtOtc.Text = r.Cells[3].Value.ToString();
             txtLogin.Text = r.Cells[5].Value.ToString();
-
-            
-
             lblID2.Text = r.Cells[4].Value.ToString();
-
-            //cmbRole.SelectedValue = Convert.ToInt32(r.Cells[5].Value);
-        }
-
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void создатьЗаписьОСотрудникеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -151,11 +137,11 @@ namespace PolyclinicrRegistry
 
             txtLogin.Enabled = true;
             txtLogin.Text = "";
-            txtPsw.Text = "";
-            txtPsw.Enabled  = true;
 
-            AddRoles(1);
-            //cmbRole.Items[2].            
+            lblID.Text = "";
+            lblID2.Text = "";
+
+            AddRoles(1);         
         }
 
         private void изменитьЗаписьОСотрудникеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -231,11 +217,6 @@ namespace PolyclinicrRegistry
             };
         }
 
-        private void dataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void cmbSpec_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -244,11 +225,6 @@ namespace PolyclinicrRegistry
                     lblID2.Text = cmbSpec.SelectedValue.ToString();
             }
             catch { }   
-        }
-
-        private void сменитьПарольToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void txtLogin_GotFocus(object sender, EventArgs e)
@@ -260,11 +236,6 @@ namespace PolyclinicrRegistry
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
         }
     }
 }

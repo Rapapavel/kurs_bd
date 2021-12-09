@@ -103,7 +103,6 @@ C:\поли\Backup\PolyclinicrRegistry\PolyclinicrRegistry\obj\Debug\Polyclinicr
 C:\поли\Backup\PolyclinicrRegistry\PolyclinicrRegistry\obj\Debug\PolyclinicrRegistry.frmMain.resources
 C:\поли\Backup\PolyclinicrRegistry\PolyclinicrRegistry\obj\Debug\PolyclinicrRegistry.frmOffice.resources
 C:\поли\Backup\PolyclinicrRegistry\PolyclinicrRegistry\obj\Debug\PolyclinicrRegistry.frmPatient.resources
-C:\поли\Backup\PolyclinicrRegistry\PolyclinicrRegistry\obj\Debug\PolyclinicrRegistry.frmRecept.resources
 C:\поли\Backup\PolyclinicrRegistry\PolyclinicrRegistry\obj\Debug\PolyclinicrRegistry.frmSheduleRecept.resources
 C:\поли\Backup\PolyclinicrRegistry\PolyclinicrRegistry\obj\Debug\PolyclinicrRegistry.frmSpecialization.resources
 C:\поли\Backup\PolyclinicrRegistry\PolyclinicrRegistry\obj\Debug\PolyclinicrRegistry.frmStaff.resources

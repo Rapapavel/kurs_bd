@@ -39,16 +39,9 @@ namespace PolyclinicrRegistry
             this.cmbStaff.SelectedIndexChanged += new System.EventHandler(this.cmbStaff_SelectedIndexChanged);
         }
 
-        private void txtFind_KeyDown(object sender, KeyEventArgs e)
-        {
-           if (e.KeyCode == Keys.Enter)
-            {
-
-            }
-        }
         private void Show()
         {
-            dt = ClassMy.SelectStaff(txtFind.Text.Trim(),true).Tables[0];
+            dt = ClassMy.SelectStaff("",true).Tables[0];
             cmbStaff.DataSource = dt;
             cmbStaff.DisplayMember = "Fio";
             cmbStaff.ValueMember = "idStaff";
@@ -120,16 +113,6 @@ namespace PolyclinicrRegistry
             ClassMy.CreateStaffList(idStaff, rb2.Checked, id);
             
             Show2();
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFind_TextChanged(object sender, EventArgs e)
-        {
 
         }
     }

@@ -90,11 +90,6 @@ namespace PolyclinicrRegistry
             txtName.Text = r.Cells[1].Value.ToString();
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void создатьНовуюСпециальностьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             iMode = 1;

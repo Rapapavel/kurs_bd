@@ -664,7 +664,7 @@ namespace PolyclinicrRegistry
 
 
 
-        public static DataSet SelectSheduleRecept(DateTime DateOp, long idStaff, int isClosed=0)
+        public static DataSet SelectSheduleRecept(long idStaff, int isClosed=0)
         {
             DataSet ds = new DataSet("DS");
             try
@@ -673,10 +673,6 @@ namespace PolyclinicrRegistry
                 conn.Open();
                 SqlDataAdapter sda = new SqlDataAdapter("sp_SelectSheduleRecept", conn);
                 sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-
-                // значение параметра
-                sda.SelectCommand.Parameters.Add("@DateOP", SqlDbType.DateTime);
-                sda.SelectCommand.Parameters["@DateOP"].Value = DateOp;
 
                 // значение параметра
                 sda.SelectCommand.Parameters.Add("@idStaff", SqlDbType.BigInt);

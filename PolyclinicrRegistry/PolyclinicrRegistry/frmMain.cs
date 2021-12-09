@@ -24,18 +24,11 @@ namespace PolyclinicrRegistry
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            menuStrip1.Enabled = false;
-
-            timer1.Interval = 2000;
-            timer1.Enabled = true;
-            timer1.Start();
-
+            doLogin();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void doLogin()
         {
-            timer1.Enabled = false;
-            timer1.Stop();
 
             frmLogin frm = new frmLogin();
             frm.ShowDialog();
@@ -46,13 +39,13 @@ namespace PolyclinicrRegistry
                 rStaff = frm.rStaff;
                 string s = "Пользователь: " + rStaff["Surname"].ToString().Trim() + " " + rStaff["Name"].ToString().Trim() + " " + rStaff["Patronymic"].ToString().Trim();
                 idRole = Convert.ToInt32(rStaff["idRole"]);
-                
+
                 switch (idRole)
                 {
                     case 0:
                         s += ", специалист";
                         специальностиToolStripMenuItem.Enabled = false;
-                        офисыToolStripMenuItem.Enabled=false;
+                        офисыToolStripMenuItem.Enabled = false;
                         штатноеРасписаниеСоставToolStripMenuItem.Enabled = false;
                         приемСпециалистаToolStripMenuItem.Enabled = false;
 
@@ -70,18 +63,14 @@ namespace PolyclinicrRegistry
                         s += ", администратор";
                         приемСпециалистаToolStripMenuItem.Enabled = false;
                         расписаниеСпециалистовToolStripMenuItem.Enabled = false;
+                        пациентыToolStripMenuItem.Enabled = false;
                         break;
 
                 }
                 toolStripStatusLabel1.Text = s;
             }
             else
-                DialogResult = DialogResult.Cancel;
-
-        }
-
-        private void справочникиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+                Close();
 
         }
 

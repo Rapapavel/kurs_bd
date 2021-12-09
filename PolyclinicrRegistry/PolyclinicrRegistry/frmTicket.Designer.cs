@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl = new System.Windows.Forms.Label();
+            this.rt = new System.Windows.Forms.RichTextBox();
             this.cmbResult = new System.Windows.Forms.ComboBox();
             this.chkClosed = new System.Windows.Forms.CheckBox();
             this.lblStaff = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
             this.lblEven = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btn = new System.Windows.Forms.Button();
@@ -48,8 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbSpec = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.rt = new System.Windows.Forms.RichTextBox();
-            this.lbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +59,6 @@
             this.groupBox1.Controls.Add(this.cmbResult);
             this.groupBox1.Controls.Add(this.chkClosed);
             this.groupBox1.Controls.Add(this.lblStaff);
-            this.groupBox1.Controls.Add(this.lblTime);
             this.groupBox1.Controls.Add(this.lblEven);
             this.groupBox1.Controls.Add(this.btnPrint);
             this.groupBox1.Controls.Add(this.btn);
@@ -77,35 +75,50 @@
             this.groupBox1.Controls.Add(this.cmbSpec);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(763, 463);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lbl
+            // 
+            this.lbl.AutoSize = true;
+            this.lbl.Location = new System.Drawing.Point(20, 315);
+            this.lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(191, 17);
+            this.lbl.TabIndex = 21;
+            this.lbl.Text = "Комментарий специалиста:";
+            // 
+            // rt
+            // 
+            this.rt.Location = new System.Drawing.Point(23, 335);
+            this.rt.Name = "rt";
+            this.rt.Size = new System.Drawing.Size(657, 83);
+            this.rt.TabIndex = 20;
+            this.rt.Text = "";
             // 
             // cmbResult
             // 
             this.cmbResult.FormattingEnabled = true;
             this.cmbResult.Location = new System.Drawing.Point(23, 284);
-            this.cmbResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbResult.Margin = new System.Windows.Forms.Padding(4);
             this.cmbResult.Name = "cmbResult";
             this.cmbResult.Size = new System.Drawing.Size(657, 24);
             this.cmbResult.TabIndex = 19;
-            this.cmbResult.SelectedIndexChanged += new System.EventHandler(this.cmbResult_SelectedIndexChanged);
             // 
             // chkClosed
             // 
             this.chkClosed.AutoSize = true;
             this.chkClosed.Location = new System.Drawing.Point(23, 256);
-            this.chkClosed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkClosed.Margin = new System.Windows.Forms.Padding(4);
             this.chkClosed.Name = "chkClosed";
             this.chkClosed.Size = new System.Drawing.Size(142, 21);
             this.chkClosed.TabIndex = 18;
             this.chkClosed.Text = "Прием завершен";
             this.chkClosed.UseVisualStyleBackColor = true;
-            this.chkClosed.CheckedChanged += new System.EventHandler(this.chkClosed_CheckedChanged);
             // 
             // lblStaff
             // 
@@ -116,16 +129,6 @@
             this.lblStaff.Size = new System.Drawing.Size(20, 17);
             this.lblStaff.TabIndex = 17;
             this.lblStaff.Text = "...";
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(447, 228);
-            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(20, 17);
-            this.lblTime.TabIndex = 16;
-            this.lblTime.Text = "...";
             // 
             // lblEven
             // 
@@ -140,7 +143,7 @@
             // btnPrint
             // 
             this.btnPrint.Location = new System.Drawing.Point(562, 425);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(119, 30);
             this.btnPrint.TabIndex = 14;
@@ -151,7 +154,7 @@
             // btn
             // 
             this.btn.Location = new System.Drawing.Point(442, 425);
-            this.btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn.Margin = new System.Windows.Forms.Padding(4);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(112, 30);
             this.btn.TabIndex = 13;
@@ -162,7 +165,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(306, 425);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(119, 30);
             this.btnSave.TabIndex = 11;
@@ -173,7 +176,7 @@
             // btnPatient
             // 
             this.btnPatient.Location = new System.Drawing.Point(261, 44);
-            this.btnPatient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPatient.Margin = new System.Windows.Forms.Padding(4);
             this.btnPatient.Name = "btnPatient";
             this.btnPatient.Size = new System.Drawing.Size(37, 30);
             this.btnPatient.TabIndex = 10;
@@ -207,7 +210,7 @@
             // 
             this.cmbTime.FormattingEnabled = true;
             this.cmbTime.Location = new System.Drawing.Point(307, 224);
-            this.cmbTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTime.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTime.Name = "cmbTime";
             this.cmbTime.Size = new System.Drawing.Size(95, 24);
             this.cmbTime.TabIndex = 7;
@@ -238,7 +241,7 @@
             // 
             this.dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp.Location = new System.Drawing.Point(307, 181);
-            this.dtp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp.Margin = new System.Windows.Forms.Padding(4);
             this.dtp.Name = "dtp";
             this.dtp.Size = new System.Drawing.Size(95, 22);
             this.dtp.TabIndex = 4;
@@ -249,7 +252,7 @@
             // 
             this.cmbStuff.FormattingEnabled = true;
             this.cmbStuff.Location = new System.Drawing.Point(307, 132);
-            this.cmbStuff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbStuff.Margin = new System.Windows.Forms.Padding(4);
             this.cmbStuff.Name = "cmbStuff";
             this.cmbStuff.Size = new System.Drawing.Size(373, 24);
             this.cmbStuff.TabIndex = 3;
@@ -269,7 +272,7 @@
             // 
             this.cmbSpec.FormattingEnabled = true;
             this.cmbSpec.Location = new System.Drawing.Point(307, 89);
-            this.cmbSpec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSpec.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSpec.Name = "cmbSpec";
             this.cmbSpec.Size = new System.Drawing.Size(373, 24);
             this.cmbSpec.TabIndex = 1;
@@ -285,25 +288,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Специализация / направление лечения:";
             // 
-            // rt
-            // 
-            this.rt.Location = new System.Drawing.Point(23, 335);
-            this.rt.Name = "rt";
-            this.rt.Size = new System.Drawing.Size(657, 83);
-            this.rt.TabIndex = 20;
-            this.rt.Text = "";
-            // 
-            // lbl
-            // 
-            this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(20, 315);
-            this.lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(191, 17);
-            this.lbl.TabIndex = 21;
-            this.lbl.Text = "Комментарий специалиста:";
-            this.lbl.Click += new System.EventHandler(this.label6_Click);
-            // 
             // frmTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -311,7 +295,7 @@
             this.ClientSize = new System.Drawing.Size(796, 491);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTicket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Оформление талона на прием к врачу";
@@ -325,7 +309,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblEven;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btn;

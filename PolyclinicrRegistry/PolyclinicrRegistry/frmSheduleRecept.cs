@@ -42,8 +42,7 @@ namespace PolyclinicrRegistry
                 Text = "Прием специалиста. Очередь пациентов.";
                 idStaff = Convert.ToInt64(rStaff["idStaff"]);
                 contextMenuStrip1.Enabled = false;
-                chkDtp.Visible = false;
-                dtp.Visible = false;
+        
             }
 
             Show();
@@ -72,14 +71,11 @@ namespace PolyclinicrRegistry
             dataGridView.Columns[5].Width = 120;
             dataGridView.Columns[5].HeaderText = "Пациент";
 
-            dataGridView.Columns[6].Width = 70;
-            dataGridView.Columns[6].HeaderText = "ID";
+            dataGridView.Columns[6].Width = 120;
+            dataGridView.Columns[6].HeaderText = "Регистратор";
 
             dataGridView.Columns[7].Width = 70;
-            dataGridView.Columns[7].HeaderText = "ID расп.";
-
-            dataGridView.Columns[8].Width = 70;
-            dataGridView.Columns[8].HeaderText = "Завершено";
+            dataGridView.Columns[7].HeaderText = "Завершен";
 
             this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             dataGridView.Focus();
@@ -88,44 +84,27 @@ namespace PolyclinicrRegistry
 
         private void dataGridView_SelectionChanged(object sender, EventArgs e)
         {
-
             DataGridViewRow r = this.dataGridView.CurrentRow;
             if (r == null)
                 return;
 
             idSheduleReception = Convert.ToInt64(r.Cells[0].Value);
-            
-            //cmbSpec.SelectedValue = i;
-
-            //lblID.Text = r.Cells[0].Value.ToString();
-            //txtFam.Text = r.Cells[1].Value.ToString();
-            //txtNam.Text = r.Cells[2].Value.ToString();
-            //txtOtc.Text = r.Cells[3].Value.ToString();
-            //txtLogin.Text = r.Cells[5].Value.ToString();
-
-
-
-            //lblID2.Text = r.Cells[4].Value.ToString();
         }
         private void Show()
         {
             this.dataGridView.SelectionChanged -= new System.EventHandler(this.dataGridView_SelectionChanged);
-            if (chkDtp.Checked == true)
-                DateOP = dtp.Value;
-            else
-                DateOP = Convert.ToDateTime("01.01.1900");
             
             DataSet ds = null;
             if (bMode==false)
-                ds = ClassMy.SelectSheduleRecept(DateOP,idStaff);
+                ds = ClassMy.SelectSheduleRecept(idStaff);
             else
             {
                 if (rb1.Checked==true)
-                    ds = ClassMy.SelectSheduleRecept(DateOP, idStaff,2);
+                    ds = ClassMy.SelectSheduleRecept( idStaff,2);
                 if (rb2.Checked == true)
-                    ds = ClassMy.SelectSheduleRecept(DateOP, idStaff, 1);
+                    ds = ClassMy.SelectSheduleRecept( idStaff, 1);
                 if (rb3.Checked == true)
-                    ds = ClassMy.SelectSheduleRecept(DateOP, idStaff, 0);
+                    ds = ClassMy.SelectSheduleRecept( idStaff, 0);
             }
 
             dt = ds.Tables[0];
@@ -184,11 +163,6 @@ namespace PolyclinicrRegistry
             }
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void btnDo_Click(object sender, EventArgs e)
         {
             if (idSheduleReception == 0)
@@ -197,7 +171,9 @@ namespace PolyclinicrRegistry
             frm.idSheduleRecept = idSheduleReception;
             frm.bMode = true;
             frm.ShowDialog();
-            frm.Dispose();
+            Show();
+            
+ 
         }
 
         private void rb1_CheckedChanged(object sender, EventArgs e)
@@ -214,5 +190,6 @@ namespace PolyclinicrRegistry
         {
             Show();
         }
+
     }
 }

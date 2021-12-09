@@ -121,10 +121,6 @@ namespace PolyclinicrRegistry
             }
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void новыйПациентToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -146,11 +142,6 @@ namespace PolyclinicrRegistry
             btnDo.Enabled = true;
         }
 
-        private void удалитьПациентаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void поискToolStripMenuItem_Click(object sender, EventArgs e)
         {
             g3.Enabled = true;
@@ -160,7 +151,6 @@ namespace PolyclinicrRegistry
         {
             dtpFind.Enabled = true;
             txtFind.Enabled = false;
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -242,10 +232,6 @@ namespace PolyclinicrRegistry
             }
         }
 
-        private void dtpFind_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void r3_CheckedChanged(object sender, EventArgs e)
         {

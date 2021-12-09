@@ -77,12 +77,6 @@
     <Compile Include="frmPatient.Designer.cs">
       <DependentUpon>frmPatient.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRecept.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRecept.Designer.cs">
-      <DependentUpon>frmRecept.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSheduleRecept.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,9 +120,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPatient.resx">
       <DependentUpon>frmPatient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRecept.resx">
-      <DependentUpon>frmRecept.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSheduleRecept.resx">
       <DependentUpon>frmSheduleRecept.cs</DependentUpon>

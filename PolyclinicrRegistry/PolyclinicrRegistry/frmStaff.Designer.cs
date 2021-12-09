@@ -35,8 +35,6 @@
             this.создатьЗаписьОСотрудникеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьЗаписьОСотрудникеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьЗаписьОСотрудникеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.сменитьПарольToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblID = new System.Windows.Forms.Label();
             this.txtFam = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -51,12 +49,11 @@
             this.lblID2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPsw = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnPsw = new System.Windows.Forms.Button();
-            this.cmbRole = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -84,7 +81,7 @@
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.Size = new System.Drawing.Size(1019, 335);
             this.dataGridView.TabIndex = 5;
-            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick_1);
+            //this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick_1);
             this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             // 
             // contextMenuStrip1
@@ -93,12 +90,10 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.создатьЗаписьОСотрудникеToolStripMenuItem,
             this.изменитьЗаписьОСотрудникеToolStripMenuItem,
-            this.удалитьЗаписьОСотрудникеToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.сменитьПарольToolStripMenuItem});
+            this.удалитьЗаписьОСотрудникеToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(320, 134);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(320, 76);
+            //this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // создатьЗаписьОСотрудникеToolStripMenuItem
             // 
@@ -123,18 +118,6 @@
             this.удалитьЗаписьОСотрудникеToolStripMenuItem.Size = new System.Drawing.Size(319, 24);
             this.удалитьЗаписьОСотрудникеToolStripMenuItem.Text = "Удалить запись о сотруднике";
             this.удалитьЗаписьОСотрудникеToolStripMenuItem.Click += new System.EventHandler(this.удалитьЗаписьОСотрудникеToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(316, 6);
-            // 
-            // сменитьПарольToolStripMenuItem
-            // 
-            this.сменитьПарольToolStripMenuItem.Name = "сменитьПарольToolStripMenuItem";
-            this.сменитьПарольToolStripMenuItem.Size = new System.Drawing.Size(319, 24);
-            this.сменитьПарольToolStripMenuItem.Text = "Сменить пароль";
-            this.сменитьПарольToolStripMenuItem.Click += new System.EventHandler(this.сменитьПарольToolStripMenuItem_Click);
             // 
             // lblID
             // 
@@ -278,50 +261,6 @@
             this.txtLogin.TabIndex = 17;
             this.txtLogin.GotFocus += new System.EventHandler(this.txtLogin_GotFocus);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 30);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 17);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Пароль";
-            // 
-            // txtPsw
-            // 
-            this.txtPsw.Enabled = false;
-            this.txtPsw.Location = new System.Drawing.Point(69, 25);
-            this.txtPsw.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPsw.Name = "txtPsw";
-            this.txtPsw.PasswordChar = '*';
-            this.txtPsw.Size = new System.Drawing.Size(136, 22);
-            this.txtPsw.TabIndex = 19;
-            this.txtPsw.UseSystemPasswordChar = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnPsw);
-            this.groupBox2.Controls.Add(this.txtPsw);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(583, 457);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(357, 62);
-            this.groupBox2.TabIndex = 21;
-            this.groupBox2.TabStop = false;
-            // 
-            // btnPsw
-            // 
-            this.btnPsw.Location = new System.Drawing.Point(220, 23);
-            this.btnPsw.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPsw.Name = "btnPsw";
-            this.btnPsw.Size = new System.Drawing.Size(132, 28);
-            this.btnPsw.TabIndex = 21;
-            this.btnPsw.Text = "Сменить пароль";
-            this.btnPsw.UseVisualStyleBackColor = true;
-            // 
             // cmbRole
             // 
             this.cmbRole.AutoCompleteCustomSource.AddRange(new string[] {
@@ -349,6 +288,39 @@
             this.label7.Size = new System.Drawing.Size(40, 17);
             this.label7.TabIndex = 23;
             this.label7.Text = "Роль";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 30);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 17);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Пароль";
+            // 
+            // txtPsw
+            // 
+            this.txtPsw.Enabled = false;
+            this.txtPsw.Location = new System.Drawing.Point(69, 25);
+            this.txtPsw.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPsw.Name = "txtPsw";
+            this.txtPsw.PasswordChar = '*';
+            this.txtPsw.Size = new System.Drawing.Size(136, 22);
+            this.txtPsw.TabIndex = 19;
+            this.txtPsw.UseSystemPasswordChar = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtPsw);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Location = new System.Drawing.Point(583, 457);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(357, 62);
+            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabStop = false;
             // 
             // frmStaff
             // 
@@ -411,13 +383,10 @@
         private System.Windows.Forms.Label lblID2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPsw;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnPsw;
-        private System.Windows.Forms.ComboBox cmbRole;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem сменитьПарольToolStripMenuItem;
     }
 }

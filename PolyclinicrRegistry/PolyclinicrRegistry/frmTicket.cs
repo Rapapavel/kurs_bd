@@ -13,8 +13,7 @@ namespace PolyclinicrRegistry
     public partial class frmTicket : Form
     {
         public bool bMode { get; set; }
-        DataRow rPatient=null;
-        
+   
         DataTable dt = null;
         DataTable dt2 = null;
         DataTable dt3 = null;
@@ -26,6 +25,7 @@ namespace PolyclinicrRegistry
         long idPatient = 0;
         long idSheduleStaff  = 0;
         public long idSheduleRecept { set; get; } = 0;
+
         public frmTicket()
         {
             InitializeComponent();
@@ -76,7 +76,6 @@ namespace PolyclinicrRegistry
                 rt.Enabled = true;
                 chkClosed.Enabled = true;
                 cmbResult.Enabled = true;
-
                 cmbSpec.Enabled = false;
                 cmbStuff.Enabled = false;
                 cmbTime.Enabled = false;
@@ -91,13 +90,11 @@ namespace PolyclinicrRegistry
                 rt.Enabled = false;
                 chkClosed.Enabled = false;
                 cmbResult.Enabled = false;
-                
-
                 chkClosed.Visible = false;
                 cmbResult.Visible = false;
                 rt.Visible = false;
                 lbl.Visible = false;
-
+                btnPrint.Visible = false;
             }
 
             if (idSheduleRecept == 0)
@@ -118,17 +115,14 @@ namespace PolyclinicrRegistry
                 cmbResult.DataSource = dt3;
                 cmbResult.DisplayMember = "ResultComment";
                 cmbResult.ValueMember = "idResult";
-
-          
-
+                //вернуть строку о талоне по id
                 DataRow r = ClassMy.SelectSheduleRecept4ID(idSheduleRecept);
-
                 idResult = Convert.ToInt64(r["idResult"]);
-                //idSheduleStaff = Convert.ToInt64(r["idStaffList"]);
+
                 // пациент
                 idPatient = Convert.ToInt64(r["idPatient"]);
                 lblFio.Text = r["FioPatient"].ToString().Trim();
-                
+
                 // специализация
                 cmbSpec.SelectedValue = Convert.ToInt64(r["idSpecialization"]);
                 idSpec = Convert.ToInt64(r["idSpecialization"]);
@@ -161,21 +155,13 @@ namespace PolyclinicrRegistry
                 idSheduleStaff = Convert.ToInt64(r["idSheduleStaff"]);
 
                 cmbTime.SelectedValue = idSheduleStaff;
-
                 cmbResult.SelectedValue = idResult;
-                //chkClosed.Checked = false;
-                //chkClosed.Enabled = true;
-                //cmbResult.SelectedValue = 1;
-                //cmbResult.Enabled = false;
-
+      
                 if (r["Comment"]!=null)
                     rt.Text = r["Comment"].ToString();
                 chkClosed.Checked = Convert.ToBoolean(r["isClosed"]);
-
             }
 
-            if (dt.Rows.Count > 0)
-                cmbSpec.SelectedIndex = 0;
         }
 
         private void cmbSpec_SelectedIndexChanged(object sender, EventArgs e)
@@ -289,39 +275,16 @@ namespace PolyclinicrRegistry
 
             cmbTime.DisplayMember = "TimeStart";
             cmbTime.ValueMember = "idStaffList";
-
         }
 
         private void cmbTime_Leave(object sender, EventArgs e)
         {
             if (cmbTime.SelectedIndex == -1)
-                return;
-
-            lblTime.Text = cmbTime.SelectedValue.ToString();
+                return; 
             idSheduleStaff = Convert.ToInt64(cmbTime.SelectedValue); 
         }
 
         private void cmbTime_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbResult_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkClosed_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
         {
 
         }
